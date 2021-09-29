@@ -5,7 +5,6 @@ def Merge(A, p, q, r):
 	p_idx = p
 	q_idx = q+1
 	for i in range(p, r+1):
-		print(p_idx, q_idx)
 		if q_idx == r+1 or (A[p_idx] <= A[q_idx] and p_idx != q+1):
 			B[i] = A[p_idx]
 			p_idx += 1
@@ -33,6 +32,6 @@ def insertion_sort(A):
 
 fp = open("input.txt", "r")
 A = list(map(int, fp.readlines()[0].split(" ")))
-merge_sort(A, 0, 8)
+merge_sort(A, 0, len(A)-1)
 #insertion_sort(A)
 print(A)
